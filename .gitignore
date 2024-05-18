@@ -78,3 +78,6 @@ build/
 lib/src/color.dart
 **/ref.dart
 **/test.dart
+
+# Custom
+.fvm/flutter_sdk

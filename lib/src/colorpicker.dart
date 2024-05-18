@@ -5,6 +5,7 @@
 library hsv_picker;
 
 import 'package:flutter/material.dart';
+
 import 'palette.dart';
 import 'utils.dart';
 
@@ -166,8 +167,7 @@ class _ColorPickerState extends State<ColorPicker> {
 
   @override
   void initState() {
-    currentHsvColor =
-        (widget.pickerHsvColor != null) ? widget.pickerHsvColor as HSVColor : HSVColor.fromColor(widget.pickerColor);
+    currentHsvColor = (widget.pickerHsvColor != null) ? widget.pickerHsvColor as HSVColor : HSVColor.fromColor(widget.pickerColor);
     // If there's no initial text in `hexInputController`,
     if (widget.hexInputController?.text.isEmpty == true) {
       // set it to the current's color HEX value.
@@ -187,8 +187,7 @@ class _ColorPickerState extends State<ColorPicker> {
   @override
   void didUpdateWidget(ColorPicker oldWidget) {
     super.didUpdateWidget(oldWidget);
-    currentHsvColor =
-        (widget.pickerHsvColor != null) ? widget.pickerHsvColor as HSVColor : HSVColor.fromColor(widget.pickerColor);
+    currentHsvColor = (widget.pickerHsvColor != null) ? widget.pickerHsvColor as HSVColor : HSVColor.fromColor(widget.pickerColor);
   }
 
   void colorPickerTextInputListener() {
@@ -359,10 +358,7 @@ class _ColorPickerState extends State<ColorPicker> {
     } else {
       return Row(
         children: <Widget>[
-          SizedBox(
-              width: widget.colorPickerWidth,
-              height: widget.colorPickerWidth * widget.pickerAreaHeightPercent,
-              child: colorPicker()),
+          SizedBox(width: widget.colorPickerWidth, height: widget.colorPickerWidth * widget.pickerAreaHeightPercent, child: colorPicker()),
           Column(
             children: <Widget>[
               Row(
@@ -380,8 +376,7 @@ class _ColorPickerState extends State<ColorPicker> {
                   Column(
                     children: <Widget>[
                       SizedBox(height: 40.0, width: 260.0, child: sliderByPaletteType()),
-                      if (widget.enableAlpha)
-                        SizedBox(height: 40.0, width: 260.0, child: colorPickerSlider(TrackType.alpha)),
+                      if (widget.enableAlpha) SizedBox(height: 40.0, width: 260.0, child: colorPickerSlider(TrackType.alpha)),
                     ],
                   ),
                   const SizedBox(width: 10.0),
